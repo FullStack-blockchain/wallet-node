@@ -1,125 +1,170 @@
 <% include partials/header %>
+<% include partials/mainmenu %>
 
-<div class="jumbotron">
-    <h1>Send Ether <s>& Tokens</s></h1>
-
-    <form class="iew_form__unlock_wallet">
-        <p class="lead">
-            Use your Keystore / JSON File
-        </p>
-
+<div class="app-content content">
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+        <h3 class="content-header-title mb-0 d-inline-block">Send Riobit</h3>
+      </div>
+    </div>
+    <div class="content-body">
         <div class="row">
-            <div class="col-md-8">
-                <div class="form-group">
-                    <input style="display: none" type="file" name="files[]">
-                    <button class="btn btn-info" name="select-file">Select Wallet File ...</a>
-                </div>
-            </div>
+            <div class="col-12 col-md-8">
+                <!-- User Profile -->
+                <section class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <hr/>
+                                        <form class="form-horizontal form-user-profile row mt-2 iew_form__unlock_wallet">
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <p class="text-bold-700 text-uppercase mb-0">Use your Keystore / JSON File</p>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-6">
+                                                <fieldset class="form-label-group">
+                                                    <input style="display: none" type="file" name="files[]">
+                                                    <button class="btn btn-info" name="select-file">Select Wallet File ...</button>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-6 text-right">
+                                                <fieldset class="form-label-group">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Select Network
+                                                        </button>
+                                                        <div class="dropdown-menu select-network" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="#etherscan::homestead">Etherscan: Main</a>
+                                                            <a class="dropdown-item" href="#etherscan::ropsten">Etherscan: Ropsten</a>
+                                                            <a class="dropdown-item" href="#etherscan::rinkeby">Etherscan: Rinkeby</a>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <input type="password" class="form-control" id="new-password" name="password"  placeholder="Enter Password" required="" autofocus="">
+                                                    <label for="new-password">Password</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="alert" role="alert"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn-gradient-primary my-1">UnLock</button>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal form-user-profile row mt-2 iew_form__send_ether_tokens generate">
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <!-- BTC -->
+                                                    <section class="card pull-up info">
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <div class="col-12">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-12 py-1">
+                                                                            <div class="media">
+                                                                                <i class="cc BTC mr-2 font-large-2 warning"></i>
+                                                                                <div class="media-body">
+                                                                                    <h5 class="mt-0 text-capitalize">Address</h5>
+                                                                                    <p class="text-muted mb-0 font-small-3 wallet-address address">0x000000000000000000000000000000000000000</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-12 py-1 text-center">
+                                                                            <h6>Balance:</h6>
+                                                                            <p class="text-muted mb-0 font-small-3"><span class="balance">0</span> ETH</p>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-12 py-1 text-center">
+                                                                            <h6>No Of Transactions:</h6>
+                                                                            <p class="text-muted mb-0 font-small-3"><span class="transaction_count">0</span> txns</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <!--/ BTC -->
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-6">
+                                                <fieldset class="form-label-group">
+                                                    <input type="text" class="form-control" id="to_address" name="to_address" value="0x3309a55B6AfbECb56783d694aC541AA5B3d05A2E" required="" autofocus="">
+                                                    <label for="to_address">To Address</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-6">
+                                                <fieldset class="form-label-group">
+                                                    <input type="number" class="form-control" id="amount" name="amount" value="0" required="" autofocus="">
+                                                    <label for="amount">Amount to Send</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-6">
+                                                <fieldset class="form-label-group">
+                                                    <input type="text" class="form-control" id="gas_limit" name="gas_limit" value="21000" required="" autofocus="">
+                                                    <label for="gas_limit">Gas Limit</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="alert" role="alert"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn-gradient-primary my-1">Generate Transaction</button>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal form-user-profile row mt-2 iew_form__send_ether_tokens send">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Raw Transaction</label>
+                                                        <textarea class="form-control raw_transaction"></textarea>
+                                                    </div>                
+                                                </div>
 
-            <div class="col-md-4" style="text-align: right">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Network
-                    </button>
-                    <div class="dropdown-menu select-network" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#etherscan::homestead">Etherscan: Main</a>
-                        <a class="dropdown-item" href="#etherscan::ropsten">Etherscan: Ropsten</a>
-                        <a class="dropdown-item" href="#etherscan::rinkeby">Etherscan: Rinkeby</a>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Signed Transaction</label>
+                                                        <textarea class="form-control signed_transaction"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="alert" role="alert"></div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-danger">Send</button>
+                                            </div>
+                                        </form>
+                                        <div class="iew_form__send_ether_tokens finish">
+                                            <div class="alert alert-success" role="alert">
+                                                <strong>Well done! Transaction:</strong> <span class="transaction_hash">0x000000000000000000000000000000000000000</span>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>  
-            </div>
-        </div>        
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Password">
-                </div>
-
-                <div class="form-group">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                    </div>
-                </div>                
-
-                <div class="alert" role="alert"></div>
-
-                <div class="form-group">
-                    <button class="btn btn-danger unlock" type="submit">UnLock</button>
-                </div>
+                </section>
             </div>
         </div>
-    </form>
-
-    <form class="iew_form__send_ether_tokens generate">
-        <div class="row info">
-            <div class="col-md-5">
-                <strong>Address:</strong> <span class="address">0x000000000000000000000000000000000000000</span>
-            </div>
-            <div class="col-md-4">
-                <strong>Balance:</strong> <span class="balance">0</span> ETH
-            </div>
-            <div class="col-md-3">
-                <strong>No Of Transactions:</strong> <span class="transaction_count">0</span> txns
-            </div>
-        </div>
-                
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>To Address</label>
-                    <input class="form-control" type="text" name="to_address" placeholder="0x3309a55B6AfbECb56783d694aC541AA5B3d05A2E">
-                </div>
-                
-                <div class="form-group">
-                    <label>Amount to Send</label>
-                    <input class="form-control" type="number" name="amount" placeholder="Amounth" step="any">
-                </div>
-                
-                <div class="form-group">
-                    <label>Gas Limit</label>
-                    <input class="form-control" type="text" name="gas_limit" placeholder="21000" value="21000">
-                </div>
-
-                 <div class="alert" role="alert"></div>
-                
-                <div class="form-group">
-                    <button class="btn btn-info" type="submit">Generate Transaction</button>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <form class="iew_form__send_ether_tokens send">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Raw Transaction</label>
-                    <textarea class="form-control raw_transaction"></textarea>
-                </div>                
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Signed Transaction</label>
-                    <textarea class="form-control signed_transaction"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <div class="alert" role="alert"></div>
-
-        <div class="form-group">
-            <button class="btn btn-danger" type="submit">Send</button>
-        </div>        
-    </form>
-
-    <div class="iew_form__send_ether_tokens finish">
-        <div class="alert alert-success" role="alert">
-            <strong>Well done! Transaction:</strong> <span class="transaction_hash">0x000000000000000000000000000000000000000</span>
-        </div>
-    </div>     
+    </div>
+  </div>
 </div>
+
+
+<!-- Purchase with ETH Modal -->
 
 <div class="modal fade iew_modal__confirm_transaction">
     <div class="modal-dialog" role="document">
@@ -147,9 +192,9 @@
                 </div>
 
                 <div class="form-group">
-                    You are about to send <span class="amount">0.0</span> Ether<br>
-                    to address <span class="to">0x000000000000000000000000000000000000000</span>.<br>
-                    Are you sure you want to do this?
+                    <h5><br>You are about to send <span class="amount">0.0</span> Ether<br>
+                    to address <span class="to">0x000000000000000000000000000000000000000</span>.<br></h5>
+                    <h4>Are you sure you want to do this?</h4>
                 </div>
 
                 <div class="alert" role="alert"></div>
@@ -162,5 +207,7 @@
         </div>
     </div>
 </div>
+
+<!--/ Purchase with ETH Modal -->
 
 <% include partials/footer %>

@@ -1,41 +1,71 @@
 <% include partials/header %>
+<% include partials/mainmenu %>
 
-<div class="jumbotron">
-    <h1>Create New Wallet</h1>
-
-    <form class="iew_form__create_new_wallet">
-        <p class="lead">
-            This password encrypts your private key. This does not act as a seed to generate your keys. <br>
-            <strong>You will need this password + your private key to unlock your wallet.</strong>
-        </p>
-
-        <div class="form-group">
-            <input class="form-control" type="password" name="" placeholder="Password">
-        </div>
-
-        <div class="form-group">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+<div class="app-content content">
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+        <h3 class="content-header-title mb-0 d-inline-block">Create New Wallet</h3>
+      </div>
+    </div>
+    <div class="content-body">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <!-- User Profile -->
+                <section class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <hr/>
+                                        <form class="form-horizontal form-user-profile row mt-2 iew_form__create_new_wallet">
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <p class="text-bold-700 text-uppercase mb-0">This password encrypts your private key. This does not act as a seed to generate your keys.</p>
+                                                    <p class="mb-0">You will need this password + your private key to unlock your wallet.</p>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <input type="password" class="form-control" id="new-password" placeholder="Enter Password" required="" autofocus="">
+                                                    <label for="new-password">Password</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="alert" role="alert"></div>
+                                            </div>
+                                            <div class="col-12 text-right">
+                                                <button type="submit" class="btn-gradient-primary my-1">Create</button>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal form-user-profile row mt-2 iew_form__create_new_wallet_done">
+                                            <div class="col-12">
+                                                <fieldset class="form-label-group">
+                                                    <p class="text-bold-700 text-uppercase mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-12">
+                                                <label><strong>Private Key:</strong> <span class="private-key">None</span></label><br>
+                                                <a class="btn btn-success download-json-file" href="#" role="button">Download Keystore / JSON File</a>
+                                            </div>
+                                        </form>
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-
-        <div class="alert" role="alert"></div>
-
-        <div class="form-group">
-            <button class="btn btn-info">Create New Wallet</button>
-        </div>
-    </form>
-
-    <form class="iew_form__create_new_wallet_done">
-        <p class="lead">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
-        </p>
-
-        <div class="form-group">
-            <label><strong>Private Key:</strong> <span class="private-key">None</span></label><br>
-            <a class="btn btn-success download-json-file" href="#" role="button">Download Keystore / JSON File</a>
-        </div>                        
-    </form>
+    </div>
+  </div>
 </div>
 
 <% include partials/footer %>

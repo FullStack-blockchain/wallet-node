@@ -78,9 +78,6 @@ $(document).on('submit', '.iew_form__create_new_wallet', function(event) {
         done = $('.iew_form__create_new_wallet_done'),
         password = form.find('[type="password"]').val();
 
-    if (!formCheck(form, password, "<i>Password</i> can't be empty."))
-        return;
-
     iEtherWallet.createNewWallet(password, function(percent) {
         form.find('.progress').show().find('.progress-bar').attr('aria-valuenow', percent)
             .css({ width: percent + '%' }).text(percent + '%');
@@ -214,7 +211,7 @@ function formCheck(form, value, error) {
     if (value === '' || value === undefined || value === null) {
         form.find('.alert').attr('class', 'alert alert-danger')
             .html('<strong>Error!</strong> ' + error).show().stop()
-            .delay(3000).queue(function() {
+            .delay(2000).queue(function() {
                 form.find('input,button,textarea').prop('disabled', false);
                 $(this).hide();
             });
