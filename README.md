@@ -1,4 +1,4 @@
-# Wallet-Noe #
+# Wallet-Node #
 
 
 ### Usage ###
